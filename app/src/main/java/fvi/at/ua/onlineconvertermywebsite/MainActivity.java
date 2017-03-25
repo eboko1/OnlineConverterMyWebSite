@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         myWebView = (WebView)findViewById(R.id.myWebView);
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setBuiltInZoomControls(true);
         myWebView.loadUrl("http://fvi.at.ua/");
         myWebView.setWebViewClient(new WebViewClient());
 
