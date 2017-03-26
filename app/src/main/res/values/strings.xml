@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">"OnlineConverterMyWebSite   "</string>
     <string name="action_settings">Settings</string>
+    <string name="test">Тести</string>
+    <string name="video">Відео</string>
+    <string name="ZNO">ЗНО</string>
 </resources>

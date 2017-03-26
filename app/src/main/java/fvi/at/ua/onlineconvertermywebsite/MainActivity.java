@@ -1,5 +1,7 @@
 package fvi.at.ua.onlineconvertermywebsite;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,9 +13,11 @@ import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
         private WebView myWebView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
 
         myWebView = (WebView)findViewById(R.id.myWebView);
         WebSettings webSettings = myWebView.getSettings();
@@ -65,7 +70,17 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            //return true;
+            Toast.makeText(MainActivity.this, getString(R.string.action_settings),Toast.LENGTH_LONG).show();
+        } else if (id ==  R.id.test_set){
+            Toast.makeText(MainActivity.this, getString(R.string.test),Toast.LENGTH_LONG).show();
+            Uri uriTest = Uri.parse("http://fvi.at.ua/tests/");
+            startActivity(new Intent(Intent.ACTION_VIEW, uriTest));
+
+        } else if (id ==  R.id.video_set){
+            Toast.makeText(MainActivity.this, getString(R.string.video),Toast.LENGTH_LONG).show();
+        } else if (id ==  R.id.ZNO_set){
+            Toast.makeText(MainActivity.this, getString(R.string.ZNO),Toast.LENGTH_LONG).show();
         }
 
         return super.onOptionsItemSelected(item);

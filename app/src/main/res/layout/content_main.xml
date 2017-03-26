@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/colorAccent"
+    android:animationCache="true"
+    android:background="@android:color/holo_red_light"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="fvi.at.ua.onlineconvertermywebsite.MainActivity"
     tools:showIn="@layout/activity_main">
