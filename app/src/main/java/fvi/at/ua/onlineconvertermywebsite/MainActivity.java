@@ -3,11 +3,8 @@ package fvi.at.ua.onlineconvertermywebsite;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebSettings;
@@ -60,9 +57,9 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.olimpia) {
             //return true;
-            Toast.makeText(MainActivity.this, getString(R.string.action_settings),Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, getString(R.string.olimpia),Toast.LENGTH_LONG).show();
         } else if (id ==  R.id.test_set){
             Toast.makeText(MainActivity.this, getString(R.string.test),Toast.LENGTH_LONG).show();
             Uri uriTest = Uri.parse("http://fvi.at.ua/tests/");
