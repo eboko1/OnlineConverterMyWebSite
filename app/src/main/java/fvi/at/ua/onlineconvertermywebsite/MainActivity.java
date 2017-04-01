@@ -57,18 +57,25 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.olimpia) {
+        switch (id){
+            case  R.id.olimpia:
             //return true;
-            Toast.makeText(MainActivity.this, getString(R.string.olimpia),Toast.LENGTH_LONG).show();
-        } else if (id ==  R.id.test_set){
-            Toast.makeText(MainActivity.this, getString(R.string.test),Toast.LENGTH_LONG).show();
-            Uri uriTest = Uri.parse("http://fvi.at.ua/tests/");
-            startActivity(new Intent(Intent.ACTION_VIEW, uriTest));
+                myWebView.loadUrl("http://fvi.at.ua/index/olimpiada/0-167");
+                Toast.makeText(MainActivity.this, getString(R.string.olimpia),Toast.LENGTH_LONG).show();
+               break;
+            case  R.id.test_set:
+                myWebView.loadUrl("http://fvi.at.ua/tests/");
+                Toast.makeText(MainActivity.this, getString(R.string.test),Toast.LENGTH_LONG).show();
+               break;
+            case R.id.video_set:
+                myWebView.loadUrl("http://fvi.at.ua/video/vic/video");
+                Toast.makeText(MainActivity.this, getString(R.string.video),Toast.LENGTH_LONG).show();
+               break;
+            case R.id.ZNO_set:
+                myWebView.loadUrl("http://fvi.at.ua/index/zno/0-124");
+                Toast.makeText(MainActivity.this, getString(R.string.ZNO),Toast.LENGTH_LONG).show();
+               break;
 
-        } else if (id ==  R.id.video_set){
-            Toast.makeText(MainActivity.this, getString(R.string.video),Toast.LENGTH_LONG).show();
-        } else if (id ==  R.id.ZNO_set){
-            Toast.makeText(MainActivity.this, getString(R.string.ZNO),Toast.LENGTH_LONG).show();
         }
 
         return super.onOptionsItemSelected(item);
