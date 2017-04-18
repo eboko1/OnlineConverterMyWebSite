@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">"fvi.at.ua"</string>
+    <string name="search">Пошук</string>
+    <string name="mail">Пошта</string>
     <string name="olimpia">Олімпіади</string>
     <string name="test">Тести</string>
     <string name="video">Відео</string>

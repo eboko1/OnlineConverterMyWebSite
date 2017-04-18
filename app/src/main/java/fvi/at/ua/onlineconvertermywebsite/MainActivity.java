@@ -1,7 +1,6 @@
 package fvi.at.ua.onlineconvertermywebsite;
 
-import android.content.Intent;
-import android.net.Uri;
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -30,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         myWebView.loadUrl("http://fvi.at.ua/");
         myWebView.setWebViewClient(new WebViewClient());
 
+
+
     }
 
     @Override
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+
         return true;
     }
 
@@ -69,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                break;
             case R.id.video_set:
                 myWebView.loadUrl("http://fvi.at.ua/video/vic/video");
-                Toast.makeText(MainActivity.this, getString(R.string.video),Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this,"Завантаження " + getString(R.string.video),Toast.LENGTH_LONG).show();
                break;
             case R.id.ZNO_set:
                 myWebView.loadUrl("http://fvi.at.ua/index/zno/0-124");
