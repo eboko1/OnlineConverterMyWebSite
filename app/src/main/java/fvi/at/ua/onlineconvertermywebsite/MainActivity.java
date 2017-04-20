@@ -1,10 +1,16 @@
 package fvi.at.ua.onlineconvertermywebsite;
 
 
+import android.app.SearchManager;
+import android.content.ComponentName;
+import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -46,6 +52,22 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+      //  MenuInflater inflater = getMenuInflater();
+      //  inflater.inflate(R.menu.menu_main,menu);
+      //  MenuItem item =  menu.findItem(R.id.search);
+     //   SearchView searchView = (SearchView)item.getActionView();
+     //   searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+         //   @Override
+         //   public boolean onQueryTextSubmit(String query) {
+           //     return false;
+           // }
+
+         //   @Override
+          //  public boolean onQueryTextChange(String newText) {
+                //adapter.getFilter().filter(newText);
+          //      return false;
+         //   }
+     //   });
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
         return true;
@@ -82,4 +104,12 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    /*private void activeSearchView(Menu menu){
+        MenuItem searchItem = menu.findItem(R.id.search);
+
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+
+        final SearchManager searchManager  = (SearchManager)getSystemService(Context.SEARCH_SERVICE);
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(new ComponentName(this,MainActivity.class)));
+    }*/
 }
