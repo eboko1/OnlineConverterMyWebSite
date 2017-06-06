@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
                break;
             case R.id.mail:
                 Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setType("text/plain");
+                intent.setType("text/html");
                 intent.putExtra(Intent.EXTRA_EMAIL, "eboko1@gmail.com");
                 intent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
                 intent.putExtra(Intent.EXTRA_TEXT,"Write your message here");
@@ -111,10 +111,6 @@ public class MainActivity extends AppCompatActivity {
 
                 break;
             case R.id.search:
-
-                break;
-            case R.id.call:
-                Intent i = new Intent(Intent.ACTION_DIAL);
 
                 break;
         }
