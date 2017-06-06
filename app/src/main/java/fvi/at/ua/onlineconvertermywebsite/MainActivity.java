@@ -5,6 +5,7 @@ import android.app.SearchManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -101,14 +102,10 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, getString(R.string.ZNO),Toast.LENGTH_LONG).show();
                break;
             case R.id.mail:
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setType("text/html");
-                intent.putExtra(Intent.EXTRA_EMAIL, "eboko1@gmail.com");
-                intent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto: eboko1@gmail.com"));
                 intent.putExtra(Intent.EXTRA_TEXT,"Write your message here");
-
                 startActivity(Intent.createChooser(intent, "Send Email"));
-
                 break;
             case R.id.search:
 
