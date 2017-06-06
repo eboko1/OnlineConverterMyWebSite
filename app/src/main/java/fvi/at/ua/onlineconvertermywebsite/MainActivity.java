@@ -106,6 +106,8 @@ public class MainActivity extends AppCompatActivity {
                 intent.setData(Uri.parse("mailto: eboko1@gmail.com"));
                 intent.putExtra(Intent.EXTRA_TEXT,"Write your message here");
                 startActivity(Intent.createChooser(intent, "Send Email"));
+
+               // Toast.makeText(getApplicationContext(), getResources().getString(R.string.send_message_toast) ,Toast.LENGTH_LONG).show();
                 break;
             case R.id.search:
 

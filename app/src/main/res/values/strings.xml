@@ -6,4 +6,5 @@
     <string name="test">Тести</string>
     <string name="video">Відео</string>
     <string name="ZNO">ЗНО</string>
+    <string name="send_message_toast">Повідомлення надіслано</string>
 </resources>
