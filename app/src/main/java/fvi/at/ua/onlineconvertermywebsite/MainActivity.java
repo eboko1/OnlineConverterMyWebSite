@@ -4,6 +4,7 @@ package fvi.at.ua.onlineconvertermywebsite;
 import android.app.SearchManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -93,13 +94,29 @@ public class MainActivity extends AppCompatActivity {
                break;
             case R.id.video_set:
                 myWebView.loadUrl("http://fvi.at.ua/video/vic/video");
-                Toast.makeText(MainActivity.this,"Завантаження " + getString(R.string.video),Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this,"Завантаження... " + getString(R.string.video),Toast.LENGTH_LONG).show();
                break;
             case R.id.ZNO_set:
                 myWebView.loadUrl("http://fvi.at.ua/index/zno/0-124");
                 Toast.makeText(MainActivity.this, getString(R.string.ZNO),Toast.LENGTH_LONG).show();
                break;
+            case R.id.mail:
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_EMAIL, "eboko1@gmail.com");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
+                intent.putExtra(Intent.EXTRA_TEXT,"Write your message here");
 
+                startActivity(Intent.createChooser(intent, "Send Email"));
+
+                break;
+            case R.id.search:
+
+                break;
+            case R.id.call:
+                Intent i = new Intent(Intent.ACTION_DIAL);
+
+                break;
         }
 
         return super.onOptionsItemSelected(item);
