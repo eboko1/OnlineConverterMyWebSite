@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -53,25 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-      //  MenuInflater inflater = getMenuInflater();
-      //  inflater.inflate(R.menu.menu_main,menu);
-      //  MenuItem item =  menu.findItem(R.id.search);
-     //   SearchView searchView = (SearchView)item.getActionView();
-     //   searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-         //   @Override
-         //   public boolean onQueryTextSubmit(String query) {
-           //     return false;
-           // }
-
-         //   @Override
-          //  public boolean onQueryTextChange(String newText) {
-                //adapter.getFilter().filter(newText);
-          //      return false;
-         //   }
-     //   });
         getMenuInflater().inflate(R.menu.menu_main, menu);
-
         return true;
     }
 
@@ -89,26 +72,29 @@ public class MainActivity extends AppCompatActivity {
                 myWebView.loadUrl("http://fvi.at.ua/index/olimpiada/0-167");
                 Toast.makeText(MainActivity.this, getString(R.string.olimpia),Toast.LENGTH_LONG).show();
                break;
+            
             case  R.id.test_set:
                 myWebView.loadUrl("http://fvi.at.ua/tests/");
                 Toast.makeText(MainActivity.this, getString(R.string.test),Toast.LENGTH_LONG).show();
                break;
+
             case R.id.video_set:
                 myWebView.loadUrl("http://fvi.at.ua/video/vic/video");
                 Toast.makeText(MainActivity.this,"Завантаження... " + getString(R.string.video),Toast.LENGTH_LONG).show();
                break;
+
             case R.id.ZNO_set:
                 myWebView.loadUrl("http://fvi.at.ua/index/zno/0-124");
                 Toast.makeText(MainActivity.this, getString(R.string.ZNO),Toast.LENGTH_LONG).show();
                break;
+
             case R.id.mail:
                 Intent intent = new Intent(Intent.ACTION_SENDTO);
-                intent.setData(Uri.parse("mailto: eboko1@gmail.com"));
+                intent.setData(Uri.parse("mailto: " + getString(R.string.address_mail)));
                 intent.putExtra(Intent.EXTRA_TEXT,"Write your message here");
                 startActivity(Intent.createChooser(intent, "Send Email"));
-
-               // Toast.makeText(getApplicationContext(), getResources().getString(R.string.send_message_toast) ,Toast.LENGTH_LONG).show();
                 break;
+
             case R.id.search:
 
                 break;
@@ -116,12 +102,10 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    /*private void activeSearchView(Menu menu){
-        MenuItem searchItem = menu.findItem(R.id.search);
 
-        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+    @Override
+    protected void onResume() {
+        super.onResume();
 
-        final SearchManager searchManager  = (SearchManager)getSystemService(Context.SEARCH_SERVICE);
-        searchView.setSearchableInfo(searchManager.getSearchableInfo(new ComponentName(this,MainActivity.class)));
-    }*/
+    }
 }

@@ -7,4 +7,6 @@
     <string name="video">Відео</string>
     <string name="ZNO">ЗНО</string>
     <string name="send_message_toast">Повідомлення надіслано</string>
+    <string name="address_mail">eboko1@gmail.com</string>
+
 </resources>
